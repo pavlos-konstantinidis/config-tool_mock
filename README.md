@@ -1,7 +1,7 @@
 # Config Tool Mock
 
 ## Todos
-1. [ ] Create trial, block, and group classes
+1. [x] Create trial, block, and group classes
 2. [ ] Create instance creation forms
 3. [ ] Save everything in Vuex
 4. [ ] Render created instances
