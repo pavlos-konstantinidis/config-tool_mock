@@ -1,18 +1,15 @@
 <template>
-<div class="card">
+<div class="card bg-light mb-4">
   <div class="card-body">
-    <h5 class="card-title font-weight-bold text-success">{{this.trial.name}} #{{this.trial.id}}</h5>
+    <h5 class="card-title font-weight-bold text-success">{{this.trial.name}} <span class='text-muted'>#{{this.trial.id}}</span></h5>
     <div class="card-text">
       <div class="row">
         <!-- v-for each property -->
-        <ul class="list-group">
-          <li class="list-group-item"></li>
-        </ul>
-      </div>
-      <div class="row">
-        <!-- v-for each embedded child -->
-        <ul class="list-group">
-          <li class="list-group-item">FMS_A</li>
+        <ul class="list-group w-100">
+          <li class="list-group-item">{{this.trial.description}}</li>
+          <li class="list-group-item">Blocking: {{this.trial.blocking}}</li>
+          <li class="list-group-item">{{this.trial.labels}}</li>
+          <li class="list-group-item">{{this.trial.fsm_tpl}}</li>
         </ul>
       </div>
     </div>
