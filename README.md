@@ -2,7 +2,7 @@
 
 ## Todos
 1. [x] Create trial, block, and group classes
-2. [ ] Create instance creation forms
+2. [x] Create instance creation forms
 3. [ ] Save everything in Vuex
 4. [ ] Render created instances
 5. [ ] Make instances drag n dropable

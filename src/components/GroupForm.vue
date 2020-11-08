@@ -1,0 +1,36 @@
+<template>
+  <div class="container">
+    <form>
+      <div class="form-group">
+        <label>Id</label>
+        <input v-model="group.id" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Name</label>
+        <input v-model="group.name" type="text" class="form-control">
+      </div>
+      <button @click="addGroup" type="button" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-danger">Cancel</button>
+    </form>
+  </div>
+</template>
+
+<script>
+import { Group } from '../classes.js'
+export default {
+  name: "TrialForm",
+  data() {
+    return {
+      group: new Group()
+    }
+  },
+  methods: {
+    addGroup() {
+      console.log(this.group) // work with vuex
+    }
+  }
+}
+</script>
+
+<style scoped>
+</style>
