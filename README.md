@@ -1,24 +1,12 @@
-# mock
+# Config Tool Mock
 
-## Project setup
-```
-npm install
-```
+## Todos
+1. [ ] Create trial, block, and group classes
+2. [ ] Create instance creation forms
+3. [ ] Render created instances
+4. [ ] Make instances drag n dropable
+5. [ ] Enable data transfer
+6. [ ] Generate example JSON
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Notes
+- Do not waste time on design
