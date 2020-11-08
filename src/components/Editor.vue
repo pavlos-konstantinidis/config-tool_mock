@@ -1,6 +1,5 @@
 <template>
   <div class="row">
-    <!-- <draggable /> -->
     <div class="col-3">
       <div v-for="trial in trials" :key="trial.id">
         <Trial v-bind:trial="trial"/>
@@ -20,13 +19,11 @@
 </template>
 
 <script>
-// import draggable from 'vuedraggable'
 import Trial from './Trial'
 import Block from './Block'
 import Group from './Group'
 export default {
   components: {
-    // draggable,
     Trial, Block, Group
   },
   computed: {
