@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     addGroup() {
-      console.log(this.group) // work with vuex
+      this.$store.commit('ADD_GROUP', this.group)
     }
   }
 }

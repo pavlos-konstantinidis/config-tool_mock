@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     addBlock() {
-      console.log(this.block) // work with vuex
+      this.$store.commit('ADD_BLOCK', this.block)
     }
   }
 }

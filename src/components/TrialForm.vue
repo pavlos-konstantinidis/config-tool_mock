@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     addTrial() {
-      console.log(this.trial) // work with vuex
+      this.$store.commit('ADD_TRIAL', this.trial)
     }
   }
 }
