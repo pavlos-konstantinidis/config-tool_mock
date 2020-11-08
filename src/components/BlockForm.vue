@@ -27,6 +27,7 @@ export default {
   methods: {
     addBlock() {
       this.$store.commit('ADD_BLOCK', this.block)
+      this.block = new Block()
     }
   }
 }

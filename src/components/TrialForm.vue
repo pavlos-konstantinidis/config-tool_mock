@@ -29,7 +29,7 @@
         <input v-model="trial.blocking" type="checkbox" class="form-check-input">
         <label class="form-check-label">Blocking</label>
       </div>
-      <button @click="addTrial" type="button" class="btn btn-primary">Submit</button>
+      <button @click="addTrial(trial)" type="button" class="btn btn-primary">Submit</button>
       <button type="button" class="btn btn-danger">Cancel</button>
     </form>
   </div>
@@ -45,8 +45,9 @@ export default {
     }
   },
   methods: {
-    addTrial() {
-      this.$store.commit('ADD_TRIAL', this.trial)
+    addTrial(trial) {
+      this.$store.commit('ADD_TRIAL', trial)
+      this.trial = new Trial()
     }
   }
 }

@@ -4,7 +4,7 @@
     <!-- instance creation -->
     <div class="row">
       <div class="btn">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Trial
         </button>
         <div class="dropdown-menu">
@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="btn">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Block
         </button>
         <div class="dropdown-menu">

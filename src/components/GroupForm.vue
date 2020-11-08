@@ -27,6 +27,7 @@ export default {
   methods: {
     addGroup() {
       this.$store.commit('ADD_GROUP', this.group)
+      this.group = new Group()
     }
   }
 }

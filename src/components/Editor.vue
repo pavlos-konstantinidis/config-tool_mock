@@ -1,31 +1,33 @@
 <template>
   <div class="row">
+    <!-- <draggable /> -->
     <div class="col-3">
-      <draggable class="dragArea list-group" :list="trials" :group="{name: 'blocks', pull: 'clone', put: false}" :clone='cloneTrial'>
-        <div class="list-group-item" v-for='trial in trials' :key="trial.id">
-          {{ trial.name }}
-        </div>
-      </draggable>
+      <div v-for="trial in trials" :key="trial.id">
+        <Trial v-bind:trial="trial"/>
+      </div>
     </div>
     <div class="col-3">
-      <draggable class="dragArea list-group" :list="blocks" group="blocks">
-        <div class="list-group-item" v-for='block in blocks' :key="block.id">
-          {{ block.name }}
-        </div>
-      </draggable>
+      <div v-for="block in blocks" :key="block.id">
+        <Block v-bind:block="block"/>
+      </div>
     </div>
     <div class="col-3">
-      <draggable />
+      <div v-for="group in groups" :key="group.id">
+        <Group v-bind:group="group"/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import draggable from 'vuedraggable'
-let ids = 0;
+// import draggable from 'vuedraggable'
+import Trial from './Trial'
+import Block from './Block'
+import Group from './Group'
 export default {
   components: {
-    draggable
+    // draggable,
+    Trial, Block, Group
   },
   computed: {
       trials() {
@@ -39,12 +41,7 @@ export default {
       }
   },
   methods: {
-    cloneTrial({id}) {
-      return {
-        id: ids++,
-        name: id
-      }
-    }
+
   }
 }
 </script>
