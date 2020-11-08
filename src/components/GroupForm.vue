@@ -2,10 +2,6 @@
   <div class="container">
     <form>
       <div class="form-group">
-        <label>Id</label>
-        <input v-model="group.id" type="text" class="form-control">
-      </div>
-      <div class="form-group">
         <label>Name</label>
         <input v-model="group.name" type="text" class="form-control">
       </div>

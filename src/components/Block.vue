@@ -1,7 +1,7 @@
 <template>
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title font-weight-bold">{{this.block.name}} #{{this.block.id}}</h5>
+    <h5 class="card-title font-weight-bold text-info">{{this.block.name}} #{{this.block.id}}</h5>
     <div class="card-text">
       <div class="row">
         <!-- v-for each property -->
