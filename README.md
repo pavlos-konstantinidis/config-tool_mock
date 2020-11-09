@@ -1,4 +1,4 @@
-# Config Tool Mock
+# Config Tool - Protocol Component Mock
 
 ## Todos
 1. [x] Create trial, block, and group classes
@@ -7,7 +7,21 @@
 4. [x] Render created instances in Cards
 5. [x] Make instances drag n dropable
 6. [x] Enable data transfer
+<<<<<<< HEAD
 7. [x] Generate example JSON
+=======
+7. [ ] Fetch **protocol.json**
+8. [ ] Auto-instantiate protocols
+9. [ ] Make protocols dropable
+8. [ ] Generate templates settings from input Files
+9. [ ] Export JSON output
+>>>>>>> 21ada01ab63a1368a27872694b7f7dfe8867f5c7
 
 ## Notes
-- Do not waste time on design
+- No design - just basic bootstrap classes
+- No fix of minor bugs that do not affect core functions
+
+## Concept
+- The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code).
+- The output **subjects.json**, consists of a list of subjects (id, code, protocol{}) with their associated protocol (id, name, trials[])
+  - the final outcome does not contain any blocks or group blocks, just trials (id, name, blocking, labels, fsm_tpl)
