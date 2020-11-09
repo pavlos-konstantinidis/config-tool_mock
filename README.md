@@ -1,4 +1,4 @@
-# Config Tool Mock
+# Config Tool - Protocol Component Mock
 
 ## Todos
 1. [x] Create trial, block, and group classes
@@ -12,5 +12,10 @@
 9. [ ] Export JSON output
 
 ## Notes
-- Do not waste time on design
-- Do not get stuck on minor bugs that do not affect core functionality 
+- No design - just basic bootstrap classes
+- No fix of minor bugs that do not affect core functions
+
+## Concept
+- The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code).
+- The output **subjects.json**, consists of a list of subjects (id, code, protocol{}) with their associated protocol (id, name, trials[])
+  - the final outcome does not contain any blocks or group blocks, just trials (id, name, blocking, labels, fsm_tpl)
