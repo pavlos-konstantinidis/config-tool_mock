@@ -2,7 +2,7 @@
 <div id="app" class="h-100">
   <div class="container-fluid h-100">
     <!-- instance creation -->
-    <div class="row">
+    <div class="row w-100">
       <div class="btn">
         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Trial
@@ -27,6 +27,9 @@
           <GroupForm />
         </div>
       </div>
+      <div class="btn">
+        <button type="button" class="btn btn-secondary">Export</button>
+      </div>
     </div>
     <!-- render instances -->
     <Editor />
@@ -43,6 +46,9 @@ export default {
   name: 'App',
   components: {
     TrialForm, BlockForm, GroupForm, Editor
+  },
+  beforeCreate() {
+    this.$store.dispatch('FETCH_PROTOCOLS')
   }
 }
 </script>

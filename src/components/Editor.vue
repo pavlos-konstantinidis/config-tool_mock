@@ -1,15 +1,24 @@
 <template>
   <div class="row">
+    <!-- trials -->
     <div class="col-3">
       <div v-for="trial in trials" :key="trial.id" @dragstart="setData(trial.id)">
         <Trial v-bind:trial="trial" draggable/>
       </div>
     </div>
+    <!-- blocks -->
     <div class="col-3">
       <div v-for="block in blocks" :key="block.id" @dragstart="setData(block.id)" @drop="embed($event)" @dragover="prevent($event)">
         <Block v-bind:block="block" draggable/>
       </div>
     </div>
+    <!-- groups -->
+    <div class="col-3">
+      <div v-for="group in groups" :key="group.id" @dragstart="setData(group.id)" @drop="embed($event)" @dragover="prevent($event)">
+        <Group v-bind:group="group" draggable/>
+      </div>
+    </div>
+    <!-- protocols -->
     <div class="col-3">
       <div v-for="group in groups" :key="group.id" @dragstart="setData(group.id)" @drop="embed($event)" @dragover="prevent($event)">
         <Group v-bind:group="group" draggable/>

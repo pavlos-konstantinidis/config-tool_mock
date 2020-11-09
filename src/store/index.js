@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -7,7 +8,8 @@ export default new Vuex.Store({
   state: {
     trials: [],
     blocks: [],
-    groups: []
+    groups: [],
+    protocols: ''
   },
   mutations: {
     ADD_TRIAL(state, trial) {
@@ -42,9 +44,17 @@ export default new Vuex.Store({
         if (payload.child.charAt(0) === 'g') state.groups[index].groups.push(childData)
 
       }
+    },
+    SET_PROTOCOLS(state, payload) {
+      state.protocols = payload
     }
   },
   actions: {
+    "FETCH_PROTOCOLS" ({commit}) {
+      axios.get('http://localhost:8000/').then((data) => {
+        commit("SET_PROTOCOLS", data.data.protocols)
+      })
+    }
   },
   modules: {
   }

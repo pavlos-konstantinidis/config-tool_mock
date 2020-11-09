@@ -34,6 +34,17 @@ class Group {
   }
 }
 
+
+// class Protocol {
+//   constructor() {
+//     this.id = ''
+//     this.name = ''
+//     this.blocks = []
+//     this.groups = []
+//     this.subjects = []
+//   }
+// }
+
 export {
   Trial, Block, Group
 }

@@ -7,7 +7,7 @@
 4. [x] Render created instances in Cards
 5. [x] Make instances drag n dropable
 6. [x] Enable data transfer
-7. [ ] Generate example JSON
+7. [x] Generate example JSON
 
 ## Notes
 - Do not waste time on design

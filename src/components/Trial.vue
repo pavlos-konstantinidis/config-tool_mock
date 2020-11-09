@@ -1,9 +1,9 @@
 <template>
 <div class="card bg-light mb-4 draggableTrial">
   <div class="card-body">
-    <h5 class="card-title font-weight-bold text-success">{{this.trial.name}} <span class='text-muted'>#{{this.trial.id}}</span></h5>
+    <h5 class="card-title font-weight-bold text-success">{{this.trial.name}} <span class='text-muted float-right'>#{{this.trial.id}}</span></h5>
     <div class="card-text">
-      <div class="row">
+      <div class="row pb-3">
         <!-- v-for each property -->
         <ul class="list-group w-100">
           <li class="list-group-item">{{this.trial.description}}</li>
@@ -13,7 +13,7 @@
         </ul>
       </div>
     </div>
-    <button class="btn btn-warning">Edit</button>
+    <button class="btn btn-warning mr-2">Edit</button>
     <button class="btn btn-danger">Remove</button>
   </div>
 </div>
