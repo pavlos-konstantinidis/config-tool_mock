@@ -7,7 +7,9 @@
 4. [x] Render created instances in Cards
 5. [x] Make instances drag n dropable
 6. [x] Enable data transfer
-7. [ ] Fetch JSON file inputs
+7. [ ] Fetch **protocol.json**
+8. [ ] Auto-instantiate protocols
+9. [ ] Make protocols dropable
 8. [ ] Generate templates settings from input Files
 9. [ ] Export JSON output
 
