@@ -5,7 +5,7 @@ var uidg = 1
 
 class Trial {
   constructor(name, description, blocking, labels, fsm_tpl) {
-    this.id = uidt + 't'
+    this.id = 't' + uidt
     uidt++
     this.name = name
     this.description = description
@@ -17,7 +17,7 @@ class Trial {
 
 class Block {
   constructor(name) {
-    this.id = uidb + 'b'
+    this.id = 'b' + uidb
     uidb++
     this.name = name
     this.trials = []
@@ -26,7 +26,7 @@ class Block {
 
 class Group {
   constructor(name) {
-    this.id = uidg + 'g'
+    this.id = 'g' + uidg
     uidg++
     this.name = name
     this.blocks = []

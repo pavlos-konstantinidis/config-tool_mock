@@ -6,12 +6,12 @@
       </div>
     </div>
     <div class="col-3">
-      <div v-for="block in blocks" :key="block.id" @dragstart="setData(block.id)" @drop="getData($event)" @dragover="prevent($event)">
+      <div v-for="block in blocks" :key="block.id" @dragstart="setData(block.id)" @drop="embed($event)" @dragover="prevent($event)">
         <Block v-bind:block="block" draggable/>
       </div>
     </div>
     <div class="col-3">
-      <div v-for="group in groups" :key="group.id" @dragstart="setData(group.id)" @drop="getData($event)" @dragover="prevent($event)">
+      <div v-for="group in groups" :key="group.id" @dragstart="setData(group.id)" @drop="embed($event)" @dragover="prevent($event)">
         <Group v-bind:group="group" draggable/>
       </div>
     </div>
@@ -46,13 +46,13 @@ export default {
     setData(id) {
       this.data = id
     },
-    getData(event) {
-      console.log(this.data + "-->" +event.target.id)
+    embed(event) {
+      this.$store.commit("UPDATE_DATA", {child: this.data, parent: event.target.id})
       this.data = null
     },
     prevent(event) {
       event.preventDefault()
-    }
+    },
   }
 }
 </script>
