@@ -1,5 +1,5 @@
 <template>
-<div class="card bg-light mb-4">
+<div class="card bg-light mb-4 draggableTrial">
   <div class="card-body">
     <h5 class="card-title font-weight-bold text-success">{{this.trial.name}} <span class='text-muted'>#{{this.trial.id}}</span></h5>
     <div class="card-text">

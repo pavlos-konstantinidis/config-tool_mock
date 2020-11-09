@@ -1,18 +1,18 @@
 <template>
   <div class="row">
     <div class="col-3">
-      <div v-for="trial in trials" :key="trial.id">
-        <Trial v-bind:trial="trial"/>
+      <div v-for="trial in trials" :key="trial.id" @dragstart="setData(trial.id)">
+        <Trial v-bind:trial="trial" draggable/>
       </div>
     </div>
     <div class="col-3">
-      <div v-for="block in blocks" :key="block.id">
-        <Block v-bind:block="block"/>
+      <div v-for="block in blocks" :key="block.id" @dragstart="setData(block.id)" @drop="getData($event)" @dragover="prevent($event)">
+        <Block v-bind:block="block" draggable/>
       </div>
     </div>
     <div class="col-3">
-      <div v-for="group in groups" :key="group.id">
-        <Group v-bind:group="group"/>
+      <div v-for="group in groups" :key="group.id" @dragstart="setData(group.id)" @drop="getData($event)" @dragover="prevent($event)">
+        <Group v-bind:group="group" draggable/>
       </div>
     </div>
   </div>
@@ -23,6 +23,11 @@ import Trial from './Trial'
 import Block from './Block'
 import Group from './Group'
 export default {
+  data() {
+    return {
+      data: null
+    }
+  },
   components: {
     Trial, Block, Group
   },
@@ -38,7 +43,16 @@ export default {
       }
   },
   methods: {
-
+    setData(id) {
+      this.data = id
+    },
+    getData(event) {
+      console.log(this.data + "-->" +event.target.id)
+      this.data = null
+    },
+    prevent(event) {
+      event.preventDefault()
+    }
   }
 }
 </script>
