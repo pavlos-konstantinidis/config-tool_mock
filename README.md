@@ -7,15 +7,12 @@
 4. [x] Render created instances in Cards
 5. [x] Make instances drag n dropable
 6. [x] Enable data transfer
-<<<<<<< HEAD
 7. [x] Generate example JSON
-=======
-7. [ ] Fetch **protocol.json**
-8. [ ] Auto-instantiate protocols
-9. [ ] Make protocols dropable
-8. [ ] Generate templates settings from input Files
-9. [ ] Export JSON output
->>>>>>> 21ada01ab63a1368a27872694b7f7dfe8867f5c7
+8. [x] Fetch **protocol.json**
+9. [ ] Auto-instantiate protocols
+10. [ ] Make protocols dropable
+11. [ ] Generate templates settings from input Files
+12. [ ] Export JSON output
 
 ## Notes
 - No design - just basic bootstrap classes
