@@ -49,7 +49,7 @@ export default new Vuex.Store({
       }
     },
     SET_PROTOCOLS(state, payload) {
-      state.protocols.push(payload)
+      state.protocols.push(payload) 
     },
     SET_PREVIEW(state, payload) {
       state.previewData = payload
