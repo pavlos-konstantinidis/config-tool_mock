@@ -1,20 +1,18 @@
 # Config Tool - Protocol Component Mock
 
 ## Todos
-1. [x] Create trial, block, and group classes
+1. [x] Create trial, block, group and protocol classes
 2. [x] Create instance creation forms
-3. [x] Save everything in Vuex
+3. [x] Integrate Vuex for state management
 4. [x] Render created instances in Cards
-5. [x] Make instances drag n dropable
-6. [x] Enable data transfer
-7. [x] Generate example JSON
-8. [x] Fetch **protocol.json**
+5. [x] Make trial, block and group instances drag n dropable
+6. [x] Enable data transfer for [5]
+8. [x] Fetch **protocol.json** from dev-server
 9. [x] Auto-instantiate protocols
-10. [x] Make protocols dropable
-11. [x] Visualize every instance in modal
-12. [x] Check all instances with tree-model
-12. [ ] Flatten and abstract only trials from Protocol instance
-13. [ ] Push all trials to subjects associated with a protocol
+10. [x] Make protocols dropable - accepting block and group instances
+11. [x] Visualize every instance with json-tree modal
+12. [ ] Flatten and abstract trials from Protocol instance
+13. [ ] Push all trials to subjects associated with specified protocol
 14. [ ] Merge all subjects into one JSON, structure as specified and export
 
 ## Notes
@@ -22,6 +20,11 @@
 - No fix of minor bugs that do not affect core functions
 
 ## Concept
-- The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code).
-- The output **subjects.json**, consists of a list of subjects (id, code, protocol{}) with their associated protocol (id, name, trials[])
-  - the final outcome does not contain any blocks or group blocks, just trials (id, name, blocking, labels, fsm_tpl)
+### Input
+The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code).
+### Black Box
+Process input protocols by embedding block-groups and blocks. Each block-group can contain other block-groups and blocks. Each block consists of trials.
+- trials --> blocks --> group-blocks --> protocols
+### Output
+The output **subjects.json**, consists of a list of subjects (id, code, protocol{}) with their associated protocol (id, name, trials[])
+- the final output is relatively flat. It does not contain any blocks or group blocks, just trials (id, name, blocking, labels, fsm_tpl{})
