@@ -14,7 +14,8 @@
       </div>
     </div>
     <button class="btn btn-warning mr-2">Edit</button>
-    <button class="btn btn-danger">Remove</button>
+    <button class="btn btn-danger mr-2">Remove</button>
+    <button @click='setPreviewData(trial)' class="btn btn-secondary" :id="trial.id" data-target="#previewModal" data-toggle="modal">Preview</button>
   </div>
 </div>
 </template>
@@ -23,6 +24,11 @@
 export default {
   props: {
     trial: Object
+  },
+  methods: {
+    setPreviewData(trial) {
+      this.$store.commit('SET_PREVIEW', trial)
+    }
   }
 }
 </script>

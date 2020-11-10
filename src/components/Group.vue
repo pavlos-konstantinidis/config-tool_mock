@@ -17,7 +17,9 @@
       </div>
     </div>
     <button class="btn btn-warning mr-2" :id="group.id">Edit</button>
-    <button class="btn btn-danger" :id="group.id">Remove</button>
+    <button class="btn btn-danger mr-2" :id="group.id">Remove</button>
+    <button class="btn btn-secondary" :id="group.id" @click='setPreviewData(group)' data-target="#previewModal" data-toggle="modal">Preview</button>
+
   </div>
 </div>
 </template>
@@ -26,6 +28,11 @@
 export default {
   props: {
     group: Object
+  },
+  methods: {
+    setPreviewData(group) {
+      this.$store.commit('SET_PREVIEW', group)
+    }
   }
 }
 </script>

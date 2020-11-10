@@ -31,10 +31,13 @@
     <!-- render instances -->
     <Editor />
   </div>
+
+  <Preview v-if='previewData' :file='previewData'/>
 </div>
 </template>
 
 <script>
+import Preview from './components/Preview'
 import Editor from './components/Editor'
 import TrialForm from './components/TrialForm'
 import BlockForm from './components/BlockForm'
@@ -42,7 +45,12 @@ import GroupForm from './components/GroupForm'
 export default {
   name: 'App',
   components: {
-    TrialForm, BlockForm, GroupForm, Editor
+    TrialForm, BlockForm, GroupForm, Editor, Preview
+  },
+  computed: {
+    previewData() {
+      return this.$store.state.previewData
+    }
   },
   beforeCreate() {
     this.$store.dispatch('FETCH_PROTOCOLS')

@@ -1,17 +1,17 @@
 <template>
   <div>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{protocol.name}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLabel">{{file.name}}</h5>
+        <button type="button" class="close" @click="resetData" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <pre>{{protocol}}</pre>
+        <pre>{{file}}</pre>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -26,10 +26,15 @@
 <script>
 export default {
   props: {
-    protocol: Object
+    file: Object
+  },
+  methods: {
+    resetData() {
+      this.$store.commit('RESET_PREVIEW')
+    }
   }
 }
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 </style>

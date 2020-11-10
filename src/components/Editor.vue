@@ -21,7 +21,7 @@
     <!-- protocols -->
     <div class="col-3">
       <div v-for="protocol in protocols" :key="protocol.id" @dragstart="setData(protocol.id)" @drop="embed($event)" @dragover="prevent($event)">
-        <Protocol v-bind:protocol="protocol" draggable/>
+        <Protocol :protocol="protocol" draggable/>
       </div>
     </div>
   </div>

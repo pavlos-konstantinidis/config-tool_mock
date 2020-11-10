@@ -10,7 +10,8 @@ export default new Vuex.Store({
     trials: [],
     blocks: [],
     groups: [],
-    protocols: []
+    protocols: [],
+    previewData: null
   },
   mutations: {
     ADD_TRIAL(state, trial) {
@@ -49,6 +50,12 @@ export default new Vuex.Store({
     },
     SET_PROTOCOLS(state, payload) {
       state.protocols.push(payload)
+    },
+    SET_PREVIEW(state, payload) {
+      state.previewData = payload
+    },
+    RESET_PREVIEW(state) {
+      state.previewData = null
     }
   },
   actions: {

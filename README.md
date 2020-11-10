@@ -11,10 +11,10 @@
 8. [x] Fetch **protocol.json**
 9. [x] Auto-instantiate protocols
 10. [x] Make protocols dropable
-11. [x] Visualize protocols in modal
+11. [x] Visualize every instance in modal
 12. [ ] Build a flat protocol file (only trials)
 13. [ ] When done, push all trials to the subjects associated with a protocol
-14. [ ] Merge all subjects into one JSON, structure as specified and export 
+14. [ ] Merge all subjects into one JSON, structure as specified and export
 
 ## Notes
 - No design - just basic bootstrap classes
