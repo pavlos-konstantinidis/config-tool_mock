@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row mx-auto">
     <!-- trials -->
     <div class="col-3">
       <div v-for="trial in trials" :key="trial.id" @dragstart="setData(trial.id)">

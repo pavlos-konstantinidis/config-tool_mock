@@ -1,8 +1,8 @@
 <template>
 <div id="app" class="h-100">
-  <div class="container-fluid h-100">
+  <div class="container-fluid h-100 p-0">
     <!-- instance creation -->
-    <div class="row w-100">
+    <div class="row bg-dark m-0 mb-3">
       <div class="btn">
         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Trial

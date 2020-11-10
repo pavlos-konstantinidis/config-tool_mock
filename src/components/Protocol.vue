@@ -17,13 +17,19 @@
       </div>
     </div>
     <button class="btn btn-dark mr-2" :id="protocol.id">Export</button>
-    <button class="btn btn-secondary" :id="protocol.id">Preview</button>
+    <button class="btn btn-secondary" :id="protocol.id" data-toggle="modal" data-target="#exampleModal">Preview</button>
+    <Visual v-bind:protocol="protocol"/>
   </div>
+
 </div>
 </template>
 
 <script>
+import Visual from './Visual'
 export default {
+  components: {
+    Visual
+  },
   props: {
     protocol: Object
   }
