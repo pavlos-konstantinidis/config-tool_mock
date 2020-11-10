@@ -7,14 +7,15 @@
 4. [x] Render created instances in Cards
 5. [x] Make trial, block and group instances drag n dropable
 6. [x] Enable data transfer for [5]
-8. [x] Fetch **protocol.json** from dev-server
+8. [x] Fetch protocol.json from dev-server
 9. [x] Auto-instantiate protocols
 10. [x] Make protocols dropable - accepting block and group instances
 11. [x] Visualize every instance with json-tree modal
-12. [ ] Flatten and abstract trials from Protocol instance
-13. [ ] Push all trials to subjects associated with specified protocol
-14. [ ] Merge all subjects into one JSON, structure as specified and export
-15. [x] Deploy on digital ocean droplet for preview + [development server](https://github.com/aris-konstantinidis/config-tool_mock-server)
+12. [ ] Integrate monaco editor for direct JSON editing
+13. [ ] Flatten and abstract trials from Protocol instance
+14. [ ] Push all trials to subjects associated with specified protocol
+15. [ ] Merge all subjects into one JSON, structure as specified and export
+16. [x] Deploy on digital ocean droplet for preview + [development server](https://github.com/aris-konstantinidis/config-tool_mock-server)
 
 ## Notes
 - No design - just basic bootstrap classes
@@ -23,7 +24,7 @@
 ## Concept
 ### Input
 The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code).
-### Black Box
+### Application Process
 Process input protocols by embedding block-groups and blocks. Each block-group can contain other block-groups and blocks. Each block consists of trials.
 - trials --> blocks --> group-blocks --> protocols
 ### Output

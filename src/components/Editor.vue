@@ -23,7 +23,9 @@
       <div v-for="protocol in protocols" :key="protocol.id" @dragstart="setData(protocol.id)" @drop="embed($event)" @dragover="prevent($event)">
         <Protocol :protocol="protocol" draggable/>
       </div>
-      <p class="text-muted">Protocols JSON is fetched from <a href="http://207.154.210.124:8000/"> this</a> API.</p>
+      <p class="text-muted">Protocols JSON is dynamically fetched from <a href="http://207.154.210.124:8000/"> this </a> endpoint. Click<a href="https://github.com/aris-konstantinidis/config-tool_mock"> here</a> for the GitHub repo.
+      Try out the editor by creating new trials, blocks or groups (parent-blocks) and dragging them to other instances. This will result in the child data being nested in the parent. With the preview button you can also
+      inspect each instance in JSON format.</p>
     </div>
   </div>
 </template>

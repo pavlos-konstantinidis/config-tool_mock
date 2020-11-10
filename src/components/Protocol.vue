@@ -18,8 +18,9 @@
         </ul>
       </div>
     </div>
-    <button class="btn btn-dark mr-2" :id="protocol.id">Export</button>
-    <button class="btn btn-secondary" :id="protocol.id" data-toggle="modal" @click='setPreviewData(protocol)' data-target="#previewModal">Preview</button>
+    <button class="btn btn-info mr-2" :id="protocol.id">Edit</button>
+    <button class="btn btn-warning mr-2" :id="protocol.id">Remove</button>
+    <button class="btn btn-secondary mr-2" :id="protocol.id" data-toggle="modal" @click='setPreviewData(protocol)' data-target="#previewModal">Preview</button>
   </div>
 </div>
 </template>

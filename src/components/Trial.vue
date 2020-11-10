@@ -15,8 +15,8 @@
         </ul>
       </div>
     </div>
-    <button class="btn btn-warning mr-2">Edit</button>
-    <button class="btn btn-danger mr-2">Remove</button>
+    <button class="btn btn-info mr-2">Edit</button>
+    <button class="btn btn-warning mr-2">Remove</button>
     <button @click='setPreviewData(trial)' class="btn btn-secondary" :id="trial.id" data-target="#previewModal" data-toggle="modal">Preview</button>
   </div>
 </div>

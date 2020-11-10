@@ -12,8 +12,8 @@
         </ul>
       </div>
     </div>
-    <button class="btn btn-warning mr-2" :id="block.id">Edit</button>
-    <button class="btn btn-danger mr-2" :id="block.id">Remove</button>
+    <button class="btn btn-info mr-2" :id="block.id">Edit</button>
+    <button class="btn btn-warning mr-2" :id="block.id">Remove</button>
     <button @click='setPreviewData(block)' class="btn btn-secondary" :id="block.id" data-target="#previewModal" data-toggle="modal">Preview</button>
   </div>
 </div>
