@@ -10,7 +10,7 @@
 7. [x] Generate example JSON
 8. [x] Fetch **protocol.json**
 9. [x] Auto-instantiate protocols
-10. [ ] Make protocols dropable
+10. [x] Make protocols dropable
 11. [ ] Generate templates settings from input Files
 12. [ ] Export JSON output
 
