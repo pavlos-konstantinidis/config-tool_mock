@@ -11,7 +11,7 @@
 9. [x] Auto-instantiate protocols
 10. [x] Make protocols dropable - accepting block and group instances
 11. [x] Visualize every instance with json-tree modal
-12. [ ] Flatten and abstract trials from Protocol instance
+12. [ ] Update [1] by inserting a list (flow) in each block and parent-block instance, containing all trials, in the order set by the user.
 13. [ ] Push all trials to subjects associated with specified protocol
 14. [ ] Merge all subjects into one JSON, structure as specified and export
 15. [x] Deploy on digital ocean droplet for preview + [development server](https://github.com/aris-konstantinidis/config-tool_mock-server)
@@ -25,7 +25,8 @@
 The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code).
 ### Application Process
 Process input protocols by embedding block-groups and blocks. Each block-group can contain other block-groups and blocks. Each block consists of trials.
-- trials --> blocks --> group-blocks --> protocols
+#### The concept of **flow**
+Each block, parent-block (group) and protocol instance, aside from their nested children, also maintain an always up to date list (flow) of all the trials in the order they were set from the user. This way, the user can have an abstracted view of the experiment and the protocol can be easier prepared for export.
 ### Output
 The output **subjects.json**, consists of a list of subjects (id, code, protocol{}) with their associated protocol (id, name, trials[])
 - the final output is relatively flat. It does not contain any blocks or group blocks, just trials (id, name, blocking, labels, fsm_tpl{})
