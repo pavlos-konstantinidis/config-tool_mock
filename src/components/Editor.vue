@@ -23,6 +23,7 @@
       <div v-for="protocol in protocols" :key="protocol.id" @dragstart="setData(protocol.id)" @drop="embed($event)" @dragover="prevent($event)">
         <Protocol :protocol="protocol" draggable/>
       </div>
+      <p class="text-muted">Protocols JSON is fetched from <a href="http://207.154.210.124:8000/"> this</a> API.</p>
     </div>
   </div>
 </template>
