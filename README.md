@@ -14,7 +14,7 @@
 12. [ ] Flatten and abstract trials from Protocol instance
 13. [ ] Push all trials to subjects associated with specified protocol
 14. [ ] Merge all subjects into one JSON, structure as specified and export
-15. [x] Deploy on digital ocean droplet for preview + devserver
+15. [x] Deploy on digital ocean droplet for preview + [development server](https://github.com/aris-konstantinidis/config-tool_mock-server)
 
 ## Notes
 - No design - just basic bootstrap classes
