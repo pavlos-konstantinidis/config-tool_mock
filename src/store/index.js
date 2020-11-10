@@ -60,7 +60,7 @@ export default new Vuex.Store({
   },
   actions: {
     "FETCH_PROTOCOLS" ({commit}) {
-      axios.get('http://207.154.210.124:8000/').then((data) => {
+      axios.get('http://localhost:8000/').then((data) => {
         data.data.protocols.forEach((protocol) => {
           var newProtocol = new Protocol(protocol.id, protocol.name, protocol.subjects)
           commit("SET_PROTOCOLS", newProtocol)
