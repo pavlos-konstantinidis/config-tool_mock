@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import { Protocol } from '../classes.js'
 
 Vue.use(Vuex)
 
@@ -9,7 +10,7 @@ export default new Vuex.Store({
     trials: [],
     blocks: [],
     groups: [],
-    protocols: ''
+    protocols: []
   },
   mutations: {
     ADD_TRIAL(state, trial) {
@@ -22,7 +23,6 @@ export default new Vuex.Store({
       state.groups.push(group)
     },
     UPDATE_DATA(state, payload) {
-      console.log(payload)
       var childData = ''
       var index = 0
       // get child data from id
@@ -33,7 +33,6 @@ export default new Vuex.Store({
       } else if (payload.child.charAt(0) === "g") {
         childData = state.groups.find(group => group.id === payload.child)
       }
-      console.log(childData)
       // find index of parent and embed child into correct sublist of children
       if (payload.parent.charAt(0) === 'b') {
         index = state.blocks.findIndex(block => block.id === payload.parent)
@@ -42,17 +41,24 @@ export default new Vuex.Store({
         index = state.groups.findIndex(group => group.id === payload.parent)
         if (payload.child.charAt(0) === 'b') state.groups[index].blocks.push(childData)
         if (payload.child.charAt(0) === 'g') state.groups[index].groups.push(childData)
-
+      } else if (payload.parent.charAt(0) === "p") {
+        index = state.protocols.findIndex(protocol => protocol.id === payload.parent)
+        if (payload.child.charAt(0) === 'b') state.protocols[index].blocks.push(childData)
+        if (payload.child.charAt(0) === 'g') state.protocols[index].groups.push(childData)
       }
     },
     SET_PROTOCOLS(state, payload) {
-      state.protocols = payload
+      state.protocols.push(payload)
     }
   },
   actions: {
     "FETCH_PROTOCOLS" ({commit}) {
       axios.get('http://localhost:8000/').then((data) => {
-        commit("SET_PROTOCOLS", data.data.protocols)
+        data.data.protocols.forEach((protocol) => {
+          var newProtocol = new Protocol(protocol.id, protocol.name, protocol.subjects)
+          commit("SET_PROTOCOLS", newProtocol)
+        })
+
       })
     }
   },

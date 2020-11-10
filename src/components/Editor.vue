@@ -20,8 +20,8 @@
     </div>
     <!-- protocols -->
     <div class="col-3">
-      <div v-for="group in groups" :key="group.id" @dragstart="setData(group.id)" @drop="embed($event)" @dragover="prevent($event)">
-        <Group v-bind:group="group" draggable/>
+      <div v-for="protocol in protocols" :key="protocol.id" @dragstart="setData(protocol.id)" @drop="embed($event)" @dragover="prevent($event)">
+        <Protocol v-bind:protocol="protocol" draggable/>
       </div>
     </div>
   </div>
@@ -31,6 +31,7 @@
 import Trial from './Trial'
 import Block from './Block'
 import Group from './Group'
+import Protocol from './Protocol'
 export default {
   data() {
     return {
@@ -38,7 +39,7 @@ export default {
     }
   },
   components: {
-    Trial, Block, Group
+    Trial, Block, Group, Protocol
   },
   computed: {
       trials() {
@@ -49,6 +50,9 @@ export default {
       },
       groups() {
         return this.$store.state.groups
+      },
+      protocols() {
+        return this.$store.state.protocols
       }
   },
   methods: {

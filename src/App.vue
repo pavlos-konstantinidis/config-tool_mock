@@ -27,9 +27,6 @@
           <GroupForm />
         </div>
       </div>
-      <div class="btn">
-        <button type="button" class="btn btn-secondary">Export</button>
-      </div>
     </div>
     <!-- render instances -->
     <Editor />

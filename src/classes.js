@@ -35,16 +35,16 @@ class Group {
 }
 
 
-// class Protocol {
-//   constructor() {
-//     this.id = ''
-//     this.name = ''
-//     this.blocks = []
-//     this.groups = []
-//     this.subjects = []
-//   }
-// }
+class Protocol {
+  constructor(id, name, subjects) {
+    this.id = id
+    this.name = name
+    this.subjects = subjects
+    this.blocks = []
+    this.groups = []
+  }
+}
 
 export {
-  Trial, Block, Group
+  Trial, Block, Group, Protocol
 }
