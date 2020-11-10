@@ -31,6 +31,7 @@ class Group {
     this.name = name
     this.blocks = []
     this.groups = []
+    this.trials = []
   }
 }
 
@@ -42,6 +43,7 @@ class Protocol {
     this.subjects = subjects
     this.blocks = []
     this.groups = []
+    this.trials = []
   }
 }
 

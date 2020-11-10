@@ -40,12 +40,30 @@ export default new Vuex.Store({
         if (payload.child.charAt(0) === 't') state.blocks[index].trials.push(childData)
       } else if (payload.parent.charAt(0) === "g") {
         index = state.groups.findIndex(group => group.id === payload.parent)
-        if (payload.child.charAt(0) === 'b') state.groups[index].blocks.push(childData)
-        if (payload.child.charAt(0) === 'g') state.groups[index].groups.push(childData)
+        if (payload.child.charAt(0) === 'b') {
+          state.groups[index].blocks.push(childData)
+          childData.trials.forEach((trial) => {
+            state.groups[index].trials.push(trial)
+          })
+        } else if (payload.child.charAt(0) === 'g') {
+          state.groups[index].groups.push(childData)
+          childData.trials.forEach((trial) => {
+            state.groups[index].trials.push(trial)
+          })
+        }
       } else if (payload.parent.charAt(0) === "p") {
         index = state.protocols.findIndex(protocol => protocol.id === payload.parent)
-        if (payload.child.charAt(0) === 'b') state.protocols[index].blocks.push(childData)
-        if (payload.child.charAt(0) === 'g') state.protocols[index].groups.push(childData)
+        if (payload.child.charAt(0) === 'b') {
+          state.protocols[index].blocks.push(childData)
+          childData.trials.forEach((trial) => {
+            state.protocols[index].trials.push(trial)
+          })
+        } else if (payload.child.charAt(0) === 'g') {
+          state.protocols[index].groups.push(childData)
+          childData.trials.forEach((trial) => {
+            state.protocols[index].trials.push(trial)
+          })
+        }
       }
     },
     SET_PROTOCOLS(state, payload) {
