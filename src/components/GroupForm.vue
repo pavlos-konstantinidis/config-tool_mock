@@ -11,7 +11,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form @submit.prevent>
           <div class="form-group">
             <label>Name</label>
             <input v-model="group.name" type="text" class="form-control">

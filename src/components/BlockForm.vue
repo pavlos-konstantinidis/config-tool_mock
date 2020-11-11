@@ -11,7 +11,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form @submit.prevent>
           <div class="form-group">
             <label>Name</label>
             <input v-model="block.name" type="text" class="form-control">
@@ -37,6 +37,9 @@ export default {
     }
   },
   methods: {
+    prevent() {
+      event.preventDefault()
+    },
     addBlock() {
       this.$store.commit('ADD_BLOCK', this.block)
       this.block = new Block()
