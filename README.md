@@ -12,9 +12,10 @@
 10. [x] Make protocols dropable - accepting block and group instances
 11. [x] Visualize every instance with json-tree modal
 12. [x] Update [1] by inserting a list (trials) in each parent-block and protocol instance, containing all trials, in the order set by the user.
-13. [ ] Push all trials to subjects associated with specified protocol
-14. [ ] Merge all subjects into one JSON, structure as specified and export
-15. [x] Deploy on digital ocean droplet for preview + [development server](https://github.com/aris-konstantinidis/config-tool_mock-server)
+13. [ ] Create labels list with tags
+14. [ ] Push all trials to subjects associated with specified protocol
+15 [ ] Merge all subjects into one JSON, structure as specified and export
+16 [x] Deploy on digital ocean droplet for preview + [development server](https://github.com/aris-konstantinidis/config-tool_mock-server)
 
 ## Notes (for the mock)
 - No incorporation of "affordance" design principles - just basic bootstrap classes
