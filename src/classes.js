@@ -47,6 +47,7 @@ class Protocol {
   }
 }
 
+
 export {
   Trial, Block, Group, Protocol
 }

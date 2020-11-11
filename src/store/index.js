@@ -89,17 +89,18 @@ export default new Vuex.Store({
       state.protocols.forEach((protocol) => {
         // for each subject of this protocol
         protocol.subjects.forEach((subject) => {
-          subject.trials = []
-        })
-        protocol.subjects.forEach((subject) => {
-          subject.trials.push(protocol.trials)
-          state.exported.subjects.push(subject)
+          var newInstance = {
+            "id": subject.id,
+            "code": subject.code,
+            "protocol": {
+                "id": protocol.id,
+                "name": protocol.name,
+                "trials": protocol.trials
+            }
+          }
+          state.exported.subjects.push(newInstance)
         })
       })
-      state.trials = []
-      state.blocks = []
-      state.groups = []
-      state.protocols = []
     },
   },
   actions: {
