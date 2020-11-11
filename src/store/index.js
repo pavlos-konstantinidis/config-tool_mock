@@ -11,9 +11,18 @@ export default new Vuex.Store({
     blocks: [],
     groups: [],
     protocols: [],
-    previewData: null
+    previewData: null,
+    exported: {
+      "subjects": []
+    }
   },
   mutations: {
+    RESET(state) {
+      state.trials = []
+      state.blocks = []
+      state.groups = []
+      state.protocols = []
+    },
     ADD_TRIAL(state, trial) {
       state.trials.push(trial)
     },
@@ -74,10 +83,27 @@ export default new Vuex.Store({
     },
     RESET_PREVIEW(state) {
       state.previewData = null
-    }
+    },
+    EXPORT_PROTOCOLS(state) {
+      // for every protocol
+      state.protocols.forEach((protocol) => {
+        // for each subject of this protocol
+        protocol.subjects.forEach((subject) => {
+          subject.trials = []
+        })
+        protocol.subjects.forEach((subject) => {
+          subject.trials.push(protocol.trials)
+          state.exported.subjects.push(subject)
+        })
+      })
+      state.trials = []
+      state.blocks = []
+      state.groups = []
+      state.protocols = []
+    },
   },
   actions: {
-    "FETCH_PROTOCOLS" ({commit}) {
+    "FETCH_PROTOCOLS"({commit}) {
       axios.get('http://207.154.210.124:8000/').then((data) => {
         data.data.protocols.forEach((protocol) => {
           var newProtocol = new Protocol(protocol.id, protocol.name, protocol.subjects)

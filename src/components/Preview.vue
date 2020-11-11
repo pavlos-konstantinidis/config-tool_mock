@@ -5,7 +5,8 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{file.name}}</h5>
+        <h5 v-if="file.name" class="modal-title" id="exampleModalLabel">{{file.name}}</h5>
+        <h5 v-else class="modal-title" id="exampleModalLabel">subjects.json</h5>
         <button type="button" class="close" @click="resetData" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

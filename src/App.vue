@@ -23,7 +23,7 @@
             </div>
           </li>
           <li class="nav-item mr-auto ml-2">
-            <a type="button" class="nav-link btn btn-warning">Export</a>
+            <a type="button" class="nav-link btn btn-warning" @click="exportProtocols" data-toggle="modal" data-target="#previewModal">Export</a>
           </li>
         </ul>
       </div>
@@ -56,10 +56,22 @@ export default {
   computed: {
     previewData() {
       return this.$store.state.previewData
+    },
+    exported() {
+      return this.$store.state.exported
     }
   },
   beforeCreate() {
     this.$store.dispatch('FETCH_PROTOCOLS')
+  },
+  methods: {
+    exportProtocols() {
+      this.$store.commit('EXPORT_PROTOCOLS')
+      this.setPreviewData(this.exported)
+    },
+    setPreviewData() {
+      this.$store.commit('SET_PREVIEW', this.exported)
+    }
   }
 }
 </script>
