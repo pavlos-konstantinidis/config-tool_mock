@@ -16,9 +16,12 @@
 14. [ ] Merge all subjects into one JSON, structure as specified and export
 15. [x] Deploy on digital ocean droplet for preview + [development server](https://github.com/aris-konstantinidis/config-tool_mock-server)
 
-## Notes
-- No design - just basic bootstrap classes
+## Notes (for the mock)
+- No incorporation of "affordance" design principles - just basic bootstrap classes
 - No fix of minor bugs that do not affect core functions
+- No special features like edit, reorder, remove functionality
+- No undo/redo
+- Efficiency of processing is not the priority
 
 ## Concept
 ### Input
