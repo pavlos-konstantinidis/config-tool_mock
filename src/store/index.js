@@ -75,6 +75,16 @@ export default new Vuex.Store({
         }
       }
     },
+    RESET_ALL(state) {
+      state.trials = []
+      state.blocks = []
+      state.groups = []
+      state.protocols = []
+      state.previewData = null
+      state.exported = {
+        "subjects": []
+      }
+    },
     SET_PROTOCOLS(state, payload) {
       state.protocols.push(payload)
     },

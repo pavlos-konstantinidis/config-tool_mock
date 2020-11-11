@@ -23,6 +23,12 @@
             </div>
           </li>
           <li class="nav-item mr-auto ml-2">
+            <a type="button" class="nav-link btn btn-secondary" @click="fetchProtocols">Fetch</a>
+          </li>
+          <li class="nav-item mr-auto ml-2">
+            <a type="button" class="nav-link btn btn-light" @click="resetAll">Reset</a>
+          </li>
+          <li class="nav-item mr-auto ml-2">
             <a type="button" class="nav-link btn btn-warning" @click="exportProtocols" data-toggle="modal" data-target="#previewModal">Export</a>
           </li>
         </ul>
@@ -61,16 +67,19 @@ export default {
       return this.$store.state.exported
     }
   },
-  beforeCreate() {
-    this.$store.dispatch('FETCH_PROTOCOLS')
-  },
   methods: {
+    resetAll() {
+      this.$store.commit("RESET_ALL")
+    },
     exportProtocols() {
       this.$store.commit('EXPORT_PROTOCOLS')
       this.setPreviewData(this.exported)
     },
     setPreviewData() {
       this.$store.commit('SET_PREVIEW', this.exported)
+    },
+    fetchProtocols() {
+      this.$store.dispatch('FETCH_PROTOCOLS')
     }
   }
 }
