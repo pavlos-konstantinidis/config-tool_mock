@@ -10,7 +10,12 @@
         <ul class="list-group w-100">
           <li class="list-group-item">{{this.trial.description}}</li>
           <li class="list-group-item">Blocking: {{this.trial.blocking}}</li>
-          <li class="list-group-item">{{this.trial.labels}}</li>
+          <!-- <li class="list-group-item">{{this.trial.labels}}</li> -->
+          <div class="row p-0 m-0 b-0">
+            <div v-for="label in this.trial.labels" class="col-auto p-0 m-0 mr-2 b-0" :key="label">
+              <h4><span class='badge badge-secondary'>{{label}}</span></h4>
+            </div>
+          </div>
           <li class="list-group-item">{{this.trial.fsm_tpl}}</li>
         </ul>
       </div>

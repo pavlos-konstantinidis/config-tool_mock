@@ -22,7 +22,8 @@
           </div>
           <div class="form-group">
             <label>Labels</label>
-            <input v-model="trial.labels" type="text" class="form-control" placeholder="Comma separated">
+            <!-- <input v-model="trial.labels" type="text" class="form-control" placeholder="Comma separated"> -->
+            <b-form-tags input-id="tags-basic" v-model="trial.labels" placeholder="Insert tag and press enter to add the next.."></b-form-tags>
           </div>
           <div class="form-group">
             <label>Finite State Machine</label>
