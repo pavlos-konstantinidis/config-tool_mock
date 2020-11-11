@@ -19,8 +19,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" @click="addBlock" data-dismiss="modal">Submit</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-info" @click="addBlock" data-dismiss="modal">Submit</button>
       </div>
     </div>
   </div>
