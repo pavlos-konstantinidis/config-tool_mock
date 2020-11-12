@@ -1,5 +1,10 @@
 # Config Tool - Protocol Component Mock
 
+## Setup
+1. Install the vue-cli with `npm install -g @vue/cli`.
+2. Clone repository and install dependencies.
+3. Run in dev mode with `npm run serve` - default at :8080.
+
 ## Todos
 1. [x] Create trial, block, group and protocol classes
 2. [x] Create instance creation forms
