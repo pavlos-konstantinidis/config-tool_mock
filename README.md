@@ -34,9 +34,9 @@
 
 ## Concept
 ### Input
-The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code). The second input **fsms.json** is not taken into consideration yet.
+The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code). The second input **fsms.json** is not taken into account yet.
 ### Application Process
-Process input protocols by embedding block-groups and blocks into it. Each block-group can contain other block-groups and blocks. Each block consists of trials.
+Process input protocols by embedding block-groups and blocks into it. Each block-group can contain other block-groups and blocks. Each block consists of trials. **Integrate fsms's and update process**.
 ### Output
 The output **subjects.json**, consists of a list of subjects (id, code, protocol{}) with their associated protocol (id, name, trials[])
-The final output is relatively flat. It does not contain any blocks or group blocks, just trials (id, name, blocking, labels, fsm_tpl{}).
+The final output is relatively flat. It does not contain any blocks or group blocks, just trials (id, name, blocking, labels, fsm_tpl{}). **Update after fms integration**.
