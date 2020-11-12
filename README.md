@@ -22,18 +22,21 @@
 15. [x] Merge all subjects into one JSON, structure as specified and export (visualize in modal)
 16. [x] Deploy on digital ocean droplet for preview + [development server](https://github.com/aris-konstantinidis/config-tool_mock-server)
 
-## Notes (for the mock)
-- No incorporation of "affordance" design principles - just basic bootstrap classes
+## Notes
+- No user friendly design - just basic bootstrap classes
 - No fix of minor bugs that do not affect core functions
 - No special features like edit, reorder, remove functionality
 - No undo/redo
-- Efficiency of processing is not the priority
+- No validation of forms or JSON
+- Redundancy of data
+- Blocking condition not checked for last trial of block
+- Instead of real FSM's, placeholder Strings are used.
 
 ## Concept
 ### Input
-The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code).
+The input **protocols.json**, consists of a list of protocols (id, name, subjects[]), with their associated subjects (id, code). The second input **fsms.json** is not taken into consideration yet.
 ### Application Process
-Process input protocols by embedding block-groups and blocks. Each block-group can contain other block-groups and blocks. Each block consists of trials.
+Process input protocols by embedding block-groups and blocks into it. Each block-group can contain other block-groups and blocks. Each block consists of trials.
 ### Output
 The output **subjects.json**, consists of a list of subjects (id, code, protocol{}) with their associated protocol (id, name, trials[])
 The final output is relatively flat. It does not contain any blocks or group blocks, just trials (id, name, blocking, labels, fsm_tpl{}).
