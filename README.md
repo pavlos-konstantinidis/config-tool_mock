@@ -1,4 +1,5 @@
 # Config Tool - Protocol Component Mock
+Click [here](http://207.154.210.124:8080/) to test.
 
 ## Setup
 1. Install the vue-cli with `npm install -g @vue/cli`.
