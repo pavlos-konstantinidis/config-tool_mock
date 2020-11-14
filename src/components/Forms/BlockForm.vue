@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { Block } from '../classes.js'
+import { Block } from '../../classes.js'
 export default {
   name: "TrialForm",
   data() {

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { Group } from '../classes.js'
+import { Group } from '../../classes.js'
 export default {
   name: "TrialForm",
   data() {

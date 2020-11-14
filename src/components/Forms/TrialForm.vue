@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { Trial } from '../classes.js'
+import { Trial } from '../../classes.js'
 export default {
   name: "TrialForm",
   data() {

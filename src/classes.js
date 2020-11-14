@@ -47,7 +47,13 @@ class Protocol {
   }
 }
 
+class Fsm {
+  constructor(name, body) {
+    this.name = name
+    this.body = body
+  }
+}
 
 export {
-  Trial, Block, Group, Protocol
+  Trial, Block, Group, Protocol, Fsm
 }

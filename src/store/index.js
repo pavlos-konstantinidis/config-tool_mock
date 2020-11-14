@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-import { Protocol } from '../classes.js'
+import { Protocol, Fsm } from '../classes.js'
 
 Vue.use(Vuex)
 
@@ -14,7 +14,8 @@ export default new Vuex.Store({
     previewData: null,
     exported: {
       "subjects": []
-    }
+    },
+    fsms: []
   },
   mutations: {
     RESET(state) {
@@ -75,55 +76,35 @@ export default new Vuex.Store({
         }
       }
     },
-    RESET_ALL(state) {
-      state.trials = []
-      state.blocks = []
-      state.groups = []
-      state.protocols = []
-      state.previewData = null
-      state.exported = {
-        "subjects": []
-      }
-    },
     SET_PROTOCOLS(state, payload) {
       state.protocols.push(payload)
     },
-    SET_PREVIEW(state, payload) {
+    JSON_PREVIEW(state, payload) {
       state.previewData = payload
     },
     RESET_PREVIEW(state) {
       state.previewData = null
     },
-    EXPORT_PROTOCOLS(state) {
-      // for every protocol
-      state.protocols.forEach((protocol) => {
-        // for each subject of this protocol
-        protocol.subjects.forEach((subject) => {
-          var newInstance = {
-            "id": subject.id,
-            "code": subject.code,
-            "protocol": {
-                "id": protocol.id,
-                "name": protocol.name,
-                "trials": protocol.trials
-            }
-          }
-          state.exported.subjects.push(newInstance)
-        })
-      })
-    },
+    SET_FSMS(state, payload) {
+      state.fsms.push(payload)
+    }
   },
   actions: {
     "FETCH_PROTOCOLS"({commit}) {
-      axios.get('http://207.154.210.124:8000/').then((data) => {
+      axios.get('http://localhost:8000/protocols').then((data) => {
         data.data.protocols.forEach((protocol) => {
           var newProtocol = new Protocol(protocol.id, protocol.name, protocol.subjects)
           commit("SET_PROTOCOLS", newProtocol)
         })
-
+      })
+    },
+    "FETCH_FSMS"({commit}) {
+      axios.get('http://localhost:8000/fsms').then((data) => {
+        for (var fsm in data.data.fsms) {
+          const newFsm = new Fsm(fsm, data.data.fsms[fsm])
+          commit("SET_FSMS", newFsm)
+        }
       })
     }
-  },
-  modules: {
   }
 })

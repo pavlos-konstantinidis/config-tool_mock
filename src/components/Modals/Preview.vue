@@ -1,22 +1,19 @@
 <template>
   <div>
-<!-- Modal -->
 <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 v-if="file.name" class="modal-title" id="exampleModalLabel">{{file.name}}</h5>
-        <h5 v-else class="modal-title" id="exampleModalLabel">subjects.json</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{this.file.name}}</h5>
         <button type="button" class="close" @click="resetData" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <json-viewer :value="file"></json-viewer>
+        <json-viewer :value="file.body"></json-viewer>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-info">Save changes</button>
       </div>
     </div>
   </div>
@@ -26,18 +23,16 @@
 
 <script>
 export default {
-  data() {
-    return {
-
-    }
-  },
-  props: {
-    file: Object
+  computed: {
+    file() { return this.$store.state.previewData }
   },
   methods: {
     resetData() {
       this.$store.commit('RESET_PREVIEW')
     }
+  },
+  created() {
+    console.log(this.file)
   }
 }
 </script>

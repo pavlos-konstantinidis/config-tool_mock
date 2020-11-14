@@ -5,44 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>protocol_comp</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
     <div id="app">
-    </div>
-    <div id="welcome" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <strong class="mr-auto" style="font-size: 20px;">Info</strong>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close" onclick="closeThis()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="toast-body">
-        <p class="text-muted" style="font-size: 20px;">Click<a href="https://github.com/aris-konstantinidis/config-tool_mock"> here</a> for the Git-Hub repository of the project. Protocols can be dynamically fetched from <a href="http://207.154.210.124:8000/"> this </a> endpoint by pressing the "fetch" button.
-        Try out the editor by creating new trials, blocks or groups (parent-blocks) and dragging them to other instances. This will result in the child data being copied into the parent. For now, I keep both flat (only trials) and nested data. With the "preview" buttons you can
-        inspect each instance in JSON format. After editing the protocols, you can press the export button to see the output <strong>subjects.json</strong>. You can also reset everything with the "reset" button.</p>
-      </div>
     </div>
     <!-- built files will be auto injected -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
-<script type="text/javascript">
-function closeThis() {
-  document.getElementById('welcome').style.display = 'none'
-}
-window.onload = () => {
-  document.getElementById('welcome').style.position = "absolute"
-  document.getElementById('welcome').style.left = "20%"
-  document.getElementById('welcome').style.top = "20px"
-  document.getElementById('welcome').style.opacity = "100%"
-  document.getElementById('welcome').style.background = "white"
-}
-
-</script>
   </body>
 </html>
